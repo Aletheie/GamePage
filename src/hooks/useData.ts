@@ -7,7 +7,7 @@ import {
   CanceledError,
 } from "axios";
 
-interface FetchResponse<T> {
+export interface FetchResponse<T> {
   count: number;
   result: T[];
 }
