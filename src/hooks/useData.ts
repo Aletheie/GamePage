@@ -9,7 +9,7 @@ import {
 
 export interface FetchResponse<T> {
   count: number;
-  result: T[];
+  results: T[];
 }
 
 const useData = <T>(
