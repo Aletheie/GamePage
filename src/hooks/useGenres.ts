@@ -13,7 +13,10 @@ export interface Genre {
 const useGenres = () =>
   useQuery({
     queryKey: ["genres"],
-    queryFn: apiClient.getAll,
+    queryFn: async () => {
+      const response = (await apiClient.getAll({})) as unknown;
+      return response;
+    },
     staleTime: 26 * 60 * 60 * 1000,
     initialData: { count: genres.length, results: genres },
   });

@@ -33,7 +33,7 @@ const useGames = (gameQuery: GameQuery) =>
         },
       }),
     getNextPageParam: (lastPage, allPages) => {
-      return lastPage ? allPages.length + 1 : undefined;
+      return lastPage.next ? allPages.length + 1 : undefined;
     },
   });
 
