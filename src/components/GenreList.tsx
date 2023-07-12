@@ -13,10 +13,10 @@ import { FetchResponse } from "../services/api-client";
 
 interface Props {
   onSelectedGenre: (genre: Genre) => void;
-  selectedGenre: Genre | null;
+  selectedGenreId?: number;
 }
 
-const GenreList = ({ selectedGenre, onSelectedGenre }: Props) => {
+const GenreList = ({ selectedGenreId, onSelectedGenre }: Props) => {
   const { data, isLoading, error } = useGenres();
 
   const typedData = data as FetchResponse<Genre>;
@@ -39,7 +39,7 @@ const GenreList = ({ selectedGenre, onSelectedGenre }: Props) => {
                 objectFit="cover"
               />
               <Button
-                fontWeight={genre.id === selectedGenre?.id ? "bold" : "normal"}
+                fontWeight={genre.id === selectedGenreId ? "bold" : "normal"}
                 onClick={() => onSelectedGenre(genre)}
                 variant="link"
                 fontSize="15px"
