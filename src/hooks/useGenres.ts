@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import APIClient from "../services/api-client";
 import genres from "../data/genres";
+import ms from "ms";
 
 const apiClient = new APIClient<Genre>("/genres");
 
@@ -17,7 +18,7 @@ const useGenres = () =>
       const response = (await apiClient.getAll({})) as unknown;
       return response;
     },
-    staleTime: 26 * 60 * 60 * 1000,
+    staleTime: ms("24h"),
     initialData: genres,
   });
 
