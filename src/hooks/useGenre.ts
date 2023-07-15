@@ -1,5 +1,5 @@
 import { FetchResponse } from "../services/api-client";
-import { Game } from "./useGames";
+import { Game } from "../entities/Game";
 import useGenres from "./useGenres";
 
 const useGenre = (id?: number) => {

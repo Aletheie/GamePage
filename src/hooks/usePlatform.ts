@@ -1,5 +1,5 @@
 import { FetchResponse } from "../services/api-client";
-import { Platform } from "./useGames";
+import { Platform } from "../entities/Platform";
 import usePlatforms from "./usePlatforms";
 
 const usePlatform = (id?: number) => {
